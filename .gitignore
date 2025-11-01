@@ -1,0 +1,12 @@
+# Virtual environment
+venv/
+
+# Output file
+output.jsonl
+
+# State file
+scraper_state.json
+
+# Python cache
+__pycache__/
+*.pyc
