@@ -40,8 +40,8 @@ This approach was chosen for several key reasons:
 
 1.  Clone the repository:
     ```bash
-    git clone [Your-Repo-URL]
-    cd [Your-Repo-Name]
+    git clone https://github.com/sumdw123/scaler-scraper.git
+    cd scaler-scraper
     ```
 
 2.  Create and activate a Python virtual environment:
@@ -89,4 +89,5 @@ The system is designed to be robust against real-world data and network issues.
 1.  **Concurrent Scraping:** The current script scrapes projects sequentially. A future version could use `asyncio` with `aiohttp` or Python's `multiprocessing` to scrape all 3 projects in parallel, drastically cutting down the total time.
 2.  **Better Text Cleaning:** The current script saves the raw Jira markup (e.g., `*bold*`, `{code}...{code}`). A future improvement would be to use a simple regex or a dedicated library to convert this markup to clean Markdown or plain text, which might be better for some LLM training tasks.
 3.  **Dynamic Rate Limiting:** Instead of a fixed backoff, we could read the `Retry-After` header on a `429` response and sleep for the *exact* time specified by the server.
+
 4.  **Database Integration:** For a very large-scale system, writing directly to a database (like PostgreSQL or MongoDB) instead of a JSONL file would be more robust and allow for easier querying of the results.
